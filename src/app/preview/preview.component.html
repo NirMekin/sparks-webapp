@@ -19,8 +19,17 @@
 
 <div id="modal-container">
   <div id="modal-container-content">
+    <div id="modal-content-header">
+      <h3>PROFILE IMAGE</h3>
+    </div>
+    <hr>
     <div id="modal-content-image">
       <img [src]="commonService.getImageSrc()" />
+    </div>
+    <hr>
+    <div id="modal-content-footer">
+      <button type="button" class="btn btn-primary">MATCH</button>
+      <button type="button" class="btn btn-danger" (click)="closeModal()">CLOSE</button>
     </div>
   </div>
 
