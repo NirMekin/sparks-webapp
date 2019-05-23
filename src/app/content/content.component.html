@@ -6,12 +6,26 @@
       <div class="col-12 col-md-8  h-50 ">
         <h1 class="display-2  text-light mb-2 mt-5"><strong>Survive. Together. </strong></h1>
         <p class="lead  text-light mb-5">Find your reflection</p>
-        <p><a href="#" class="btn bg-primary btn-round text-light btn-lg btn-rised action">
+        <p>
+          <label href="#"
+             class="btn bg-primary btn-round text-light btn-lg btn-rised action"
+             for="fileupload">
           <i class="fa fa-cloud-upload" aria-hidden="true"></i>
-        </a></p>
-        <p><a href="#" class="action btn bg-danger btn-round text-light btn-lg btn-rised">
+        </label>
+          <input type="file"
+                 class="inputfile"
+                 id="fileupload"
+                 accept="image/*"
+                 (change)="handleFileInput($event.target.files)">
+        </p>
+        <p>
+          <button href="#" class="action btn bg-danger btn-round text-light btn-lg btn-rised">
           <i class="fa fa-camera" aria-hidden="true"></i>
-        </a></p>
+        </button>
+
+          <img  [src]='imgSrc'/>
+
+        </p>
       </div>
     </div>
   </div>
