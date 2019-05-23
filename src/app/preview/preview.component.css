@@ -22,6 +22,22 @@
   display: block;
   margin: 0 auto;
 }
+#modal-content-image-match{
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  height: 300px;
+}
+#modal-content-image-match img{
+  display: block;
+  width: 250px;
+  float: left;
+  margin: 0.5%;
+}
+
+#modal-content-image-match img:last-child{
+  clear: both;
+}
 
 #modal-content-footer button{
   margin: 0.5%;

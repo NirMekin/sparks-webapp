@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import {CommonService} from '../common.service';
+import {ApiService} from '../api.service';
 
 @Component({
   selector: 'app-preview',
@@ -8,30 +9,21 @@ import {CommonService} from '../common.service';
   styleUrls: ['./preview.component.css']
 })
 export class PreviewComponent {
-  closeResult: string;
-
-  constructor(private modalService: NgbModal, private commonService: CommonService) {
-  }
-
-  open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
+  isMatch: boolean;
+  matchObj: any;
+  constructor(private modalService: NgbModal, private commonService: CommonService, private apiService: ApiService) {
+    this.isMatch = false;
   }
 
   closeModal() {
     this.commonService.openModal = false;
+    this.isMatch = false;
+  }
+  async setMatch() {
+    const response = await this.apiService.getMatch(this.commonService.getImageSrc());
+    this.commonService.setMatch(response);
+    console.log(response, this.commonService.getMtachObj());
+    this.matchObj = this.commonService.getMtachObj();
+    this.isMatch = true;
   }
 }
