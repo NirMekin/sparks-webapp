@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+p, body {
+background-color: #343a40  !important;
+}
+.heighty {
+  height: 100% !important;
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
+import {CommonService} from '../common.service';
 
 @Component({
   selector: 'app-camera',
@@ -9,7 +10,7 @@ import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
 })
 export class CameraComponent implements OnInit {
   // toggle webcam on/off
-  public showWebcam = true;
+  public showWebcam = false;
   public allowCameraSwitch = true;
   public multipleWebcamsAvailable = false;
   public deviceId: string;
@@ -27,6 +28,9 @@ export class CameraComponent implements OnInit {
   // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
   private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
 
+  constructor(private commonService: CommonService) {
+
+  }
   public ngOnInit(): void {
     WebcamUtil.getAvailableVideoInputs()
       .then((mediaDevices: MediaDeviceInfo[]) => {
@@ -56,6 +60,9 @@ export class CameraComponent implements OnInit {
   public handleImage(webcamImage: WebcamImage): void {
     console.log('received webcam image', webcamImage);
     this.webcamImage = webcamImage;
+    this.commonService.setImageSrc(this.webcamImage.imageAsDataUrl);
+    this.showWebcam = false;
+    this.commonService.openModal = true;
   }
 
   public cameraWasSwitched(deviceId: string): void {

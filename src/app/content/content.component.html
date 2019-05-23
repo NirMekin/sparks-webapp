@@ -1,11 +1,10 @@
-<section class="pt-5 pb-5 mt-0 align-items-center d-flex bg-dark"
-         style="height:100vh; background-size: cover; background-image: url(http://www.art-portrets.ru/pict3/devochka-s-zerkalom.jpg);">
+<section class=" heighty pt-5 pb-5 mt-0 align-items-center d-flex bg-dark">
 
   <div class="container-fluid">
     <div class="row  justify-content-center align-items-center d-flex text-center h-100">
       <div class="col-12 col-md-8  h-50 ">
         <h1 class="display-2  text-light mb-2 mt-5"><strong>Survive. Together. </strong></h1>
-        <p class="lead  text-light mb-5">Find your reflection</p>
+        <p class="lead  text-light mb-5">Find your Holocaust twin </p>
         <p>
           <label href="#"
              class="btn bg-primary btn-round text-light btn-lg btn-rised action"
@@ -18,14 +17,9 @@
                  accept="image/*"
                  (change)="handleFileInput($event.target.files)">
         </p>
-        <p>
-          <button href="#" class="action btn bg-danger btn-round text-light btn-lg btn-rised">
-          <i class="fa fa-camera" aria-hidden="true"></i>
-        </button>
-        </p>
+        <app-camera></app-camera>
       </div>
     </div>
-
     <app-preview *ngIf="commonService.openModal"></app-preview>
   </div>
 </section>

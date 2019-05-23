@@ -1,16 +1,24 @@
-<webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
-        [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
-        [videoOptions]="videoOptions"
-        [imageQuality]="1"
-        (cameraSwitched)="cameraWasSwitched($event)"
-        (initError)="handleInitError($event)"
-></webcam>
+<div>
+  <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+          *ngIf="showWebcam"
+          [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+          [videoOptions]="videoOptions"
+          [imageQuality]="1"
+          (cameraSwitched)="cameraWasSwitched($event)"
+          (initError)="handleInitError($event)">
 
-<button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
-<button class="actionBtn" (click)="toggleWebcam();">Toggle Webcam</button>
-<br/>
-<button class="actionBtn" (click)="showNextWebcam(true);" [disabled]="!multipleWebcamsAvailable">Next Webcam</button>
-<input id="cameraSwitchCheckbox" type="checkbox" [(ngModel)]="allowCameraSwitch"><label for="cameraSwitchCheckbox">Allow Camera Switch</label>
-<br/>
-DeviceId: <input id="deviceId" type="text" [(ngModel)]="deviceId" style="width: 500px">
-<button (click)="showNextWebcam(deviceId);">Activate</button>
+  </webcam>
+</div>
+
+<p class="cont">
+  <button (click)="toggleWebcam()" class="action btn bg-danger btn-round text-light btn-lg btn-rised">
+    <i class="fa fa-camera" aria-hidden="true"></i>
+  </button>
+</p>
+<p class="cont">
+  <button class="action btn bg-danger btn-round text-light btn-lg btn-rised"
+          (click)="triggerSnapshot()"
+          *ngIf="showWebcam"
+  >Take A Snapshot
+  </button>
+</p>
