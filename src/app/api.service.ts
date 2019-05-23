@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http/';
+import {Http, Response} from '@angular/http';
+import { Observable , of } from 'rxjs/';
+import { map, takeUntil, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
   getMatch(image: String): any {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -16,5 +20,9 @@ export class ApiService {
         });
       }, 1000);
     });
+  }
+
+  extractData(res: Response) {
+    return res;
   }
 }
