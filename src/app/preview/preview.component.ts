@@ -19,11 +19,13 @@ export class PreviewComponent {
     this.commonService.openModal = false;
     this.isMatch = false;
   }
-  async setMatch() {
-    const response = await this.apiService.getMatch(this.commonService.getImageSrc());
-    this.commonService.setMatch(response);
-    console.log(response, this.commonService.getMtachObj());
-    this.matchObj = this.commonService.getMtachObj();
-    this.isMatch = true;
+  setMatch() {
+   this.apiService.getMatch(this.commonService.getImageSrc()).subscribe(res => {
+     this.commonService.setMatch(res);
+     console.log(res, this.commonService.getMatchObj());
+     this.matchObj = this.commonService.getMatchObj();
+     this.isMatch = true;
+    });
+
   }
 }

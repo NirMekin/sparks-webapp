@@ -29,7 +29,7 @@ export class CommonService {
     };
     this.isSetMatch = true;
   }
-  getMtachObj() {
+  getMatchObj() {
     return this.matchObject;
   }
 }
