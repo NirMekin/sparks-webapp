@@ -14,9 +14,8 @@ export class ApiService {
     console.log(imageSrc);
     return this.http.post(`http://13.93.10.255:8889/getSimilarVictim`, {path: imageSrc})
       .pipe(
-        map((res: {results}) => {
-          console.log(res);
-          return (res.results);
+        map((res) => {
+          return (res);
         })
       );
   }

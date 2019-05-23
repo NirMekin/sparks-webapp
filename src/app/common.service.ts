@@ -23,9 +23,10 @@ export class CommonService {
   setMatch(matchObj: any) {
     this.matchObject = {
       userSrc : this.imageSrc,
-      matchSrc : matchObj.baseUrl + '/' + matchObj.name + '.jpg',
+      matchSrc : matchObj.image,
       matchName: matchObj.name,
-      similarityScore : matchObj.similarityScore
+      similarityScore : matchObj.similarityScore,
+      description: matchObj.description
     };
     this.isSetMatch = true;
   }
