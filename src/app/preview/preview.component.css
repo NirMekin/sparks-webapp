@@ -7,6 +7,8 @@
   background: rgba(0,0,0,0.6);
 }
 #modal-container-content{
+  border-radius: 3px;
+  padding: 1%;
   background: white;
   width:80%;
   position:relative ;
@@ -26,13 +28,12 @@
   text-align: center;
   margin: auto;
   width: 50%;
-  height: 300px;
+  height: 400px;
 }
 #modal-content-image-match img{
-  display: block;
-  width: 250px;
+  width: 47%;
   float: left;
-  margin: 0.5%;
+  margin: 1.5%;
 }
 
 #modal-content-image-match img:last-child{

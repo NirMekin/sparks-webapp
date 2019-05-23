@@ -9,9 +9,9 @@
     </div>
     <div id="modal-content-image-match" *ngIf="isMatch">
       <p>{{matchObj.matchName}}</p>
-      <img [src]="commonService.getImageSrc()" />
-      <img [src]="matchObj.matchSrc" />
       <p>{{matchObj.similarityScore*100}}%</p>
+      <img [src]="commonService.getImageSrc()" />
+      <img [src]="matchObj.matchSrc" /><br>
     </div>
     <hr>
     <div id="modal-content-footer">
