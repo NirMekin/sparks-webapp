@@ -4,9 +4,9 @@
     <div class="row  justify-content-center align-items-center d-flex text-center h-100">
       <div class="col-12 col-md-8  h-50 ">
         <h1 class="display-2  text-light mb-2 mt-5"><strong>My Holocaust Twin</strong></h1>
-        <p>
+        <p *ngIf="!isCameraOpen">
           <label href="#"
-             class="btn bg-primary btn-round text-light btn-lg btn-rised action"
+             class="btn bg-primary btn-round text-light btn-lg btn-rised action upload"
              for="fileupload">
           <i class="fa fa-cloud-upload" aria-hidden="true"></i>
         </label>
@@ -16,8 +16,8 @@
                  accept="image/*"
                  (change)="handleFileInput($event.target.files)">
         </p>
-        <app-camera></app-camera>
-        <p class="lead  text-light mb-5">It could have been You</p>
+        <app-camera (isCameraOpen)="updateUploadVisible($event)"></app-camera>
+        <p class="lead  text-light mb-5">Think about it, it could have been You...</p>
 
       </div>
     </div>

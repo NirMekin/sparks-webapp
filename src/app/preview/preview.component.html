@@ -1,22 +1,45 @@
 <div id="modal-container">
   <div id="modal-container-content">
     <div id="modal-content-header">
-      <h3>PROFILE IMAGE</h3>
+      <h3>Profile Image</h3>
     </div>
     <hr>
     <div id="modal-content-image" *ngIf="!isMatch">
       <img [src]="commonService.getImageSrc()" />
     </div>
     <div id="modal-content-image-match" *ngIf="isMatch">
-      <p>{{matchObj.matchName}}</p>
-      <p>{{matchObj.similarityScore*100}}%</p>
-      <img [src]="commonService.getImageSrc()" />
-      <img [src]="matchObj.matchSrc" /><br>
+      <div class="match-child">
+        <p>
+          {{matchObj.matchName}}
+        </p>
+        <hr>
+        <p>
+          {{matchObj.description}}
+        </p>
+      </div>
+
+
+      <!--<p>{{matchObj.similarityScore*100}}%</p>-->
+
+      <img class="match-child" [src]="commonService.getImageSrc()" />
+      <img class="match-child" [src]="matchObj.matchSrc" />
+      <div class="match-child">
+        <circle-progress
+          [percent]="getSimilarity()"
+          [radius]="100"
+          [outerStrokeWidth]="8"
+          [innerStrokeWidth]="4"
+          [outerStrokeColor]="'#78C000'"
+          [innerStrokeColor]="'#C7E596'"
+          [animation]="true"
+          [animationDuration]="300"
+        ></circle-progress>
+      </div>
     </div>
     <hr>
     <div id="modal-content-footer">
-      <button type="button" class="btn btn-primary" (click)="setMatch()">MATCH</button>
-      <button type="button" class="btn btn-danger" (click)="closeModal()">CLOSE</button>
+      <button type="button" class="btn btn-primary" (click)="setMatch()">Match</button>
+      <button type="button" class="btn btn-danger" (click)="closeModal()">Close</button>
     </div>
   </div>
 

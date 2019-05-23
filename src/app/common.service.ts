@@ -26,7 +26,7 @@ export class CommonService {
       matchSrc : matchObj.image,
       matchName: matchObj.name,
       similarityScore : matchObj.similarityScore,
-      description: matchObj.description
+      description: matchObj.discription
     };
     this.isSetMatch = true;
   }

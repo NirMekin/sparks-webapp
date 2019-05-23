@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: #6e6e6e;
-  background-image: url('./assets/Mirror_modified.svg');
-  background-attachment: fixed;
+  background: #6e6e6e url('./assets/Mirror_modified.svg') fixed no-repeat;
   background-size: cover;
+  font-family: 'Open Sans Condensed', sans-serif;
+  /*overflow: hidden;*/
 }
 .heighty {
   height: 100% !important;

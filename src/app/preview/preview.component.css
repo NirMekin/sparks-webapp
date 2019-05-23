@@ -15,25 +15,23 @@
   margin:20px auto;
 }
 
-#modal-content-image{
+#modal-content-header{
 
 }
 
 #modal-content-image img{
-  width: 350px;
+  width: 250px;
   display: block;
   margin: 0 auto;
 }
 #modal-content-image-match{
   text-align: center;
   margin: auto;
-  width: 50%;
-  height: 400px;
+  display: flex;
 }
-#modal-content-image-match img{
-  width: 47%;
-  float: left;
-  margin: 1.5%;
+#modal-content-image-match .match-child{
+  flex-direction: row;
+  margin-right: 5%;
 }
 
 #modal-content-image-match img:last-child{

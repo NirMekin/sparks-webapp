@@ -11,6 +11,8 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// Import ng-circle-progress
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,17 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    // Specify ng-circle-progress as an import
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 8,
+      innerStrokeWidth: 4,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

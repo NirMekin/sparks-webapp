@@ -8,6 +8,7 @@ import {PreviewComponent} from '../preview/preview.component';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
+  isCameraOpen: boolean = false;
   constructor(public commonService: CommonService) { }
 
   handleFileInput(images) {
@@ -18,6 +19,10 @@ export class ContentComponent {
     };
 
     reader.readAsDataURL(images[0]);
+  }
+
+  updateUploadVisible(event:any) {
+    this.isCameraOpen = event;
   }
 
 }

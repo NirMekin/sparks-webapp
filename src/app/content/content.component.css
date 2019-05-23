@@ -1,6 +1,12 @@
 .action {
   width: 30%;
 }
+.upload {
+  cursor: pointer;
+}
+.upload:hover {
+  background-color: blue !important;
+}
 
 .inputfile {
   width: 0.1px;
