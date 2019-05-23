@@ -1,0 +1,22 @@
+#modal-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  background: rgba(0,0,0,0.6);
+}
+#modal-container-content{
+  width:80%;
+  position:relative ;
+  margin:20px auto;
+}
+
+#modal-content-image{
+
+}
+
+#modal-content-image img{
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}

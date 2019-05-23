@@ -22,11 +22,10 @@
           <button href="#" class="action btn bg-danger btn-round text-light btn-lg btn-rised">
           <i class="fa fa-camera" aria-hidden="true"></i>
         </button>
-
-          <img  [src]='imageSrc'/>
-
         </p>
       </div>
     </div>
+
+    <app-preview *ngIf="commonService.openModal"></app-preview>
   </div>
 </section>
