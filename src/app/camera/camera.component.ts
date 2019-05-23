@@ -42,6 +42,8 @@ export class CameraComponent implements OnInit {
 
   public triggerSnapshot(): void {
     this.trigger.next();
+    this.isCameraOpen.emit(false);
+
   }
 
   public toggleWebcam(): void {
