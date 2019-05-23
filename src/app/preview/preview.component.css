@@ -3,9 +3,11 @@
   top: 0;
   left: 0;
   width:100%;
+  height: 100%;
   background: rgba(0,0,0,0.6);
 }
 #modal-container-content{
+  background: white;
   width:80%;
   position:relative ;
   margin:20px auto;
@@ -16,7 +18,11 @@
 }
 
 #modal-content-image img{
-  width: 90%;
+  width: 350px;
   display: block;
   margin: 0 auto;
+}
+
+#modal-content-footer button{
+  margin: 0.5%;
 }

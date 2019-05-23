@@ -30,4 +30,8 @@ export class PreviewComponent {
       return  `with: ${reason}`;
     }
   }
+
+  closeModal() {
+    this.commonService.openModal = false;
+  }
 }
