@@ -12,7 +12,8 @@
 
 <p class="cont">
   <button (click)="toggleWebcam()" class="action btn bg-danger btn-round text-light btn-lg btn-rised">
-    <i class="fa fa-camera-retro" aria-hidden="true"></i>
+    <i class="fa fa-camera-retro" aria-hidden="true" *ngIf="!showWebcam"></i>
+    <i class="fa fa-close" *ngIf="showWebcam"></i>
   </button>
 </p>
 <p class="cont">
