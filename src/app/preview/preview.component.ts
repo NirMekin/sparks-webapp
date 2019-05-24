@@ -30,6 +30,6 @@ export class PreviewComponent {
   getSimilarity() {
     // @ts-ignore
     let x =  parseInt(this.matchObj.similarityScore * 100);
-    return x;
+    return x > 100 ? 98 : x;
   }
 }
