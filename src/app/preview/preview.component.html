@@ -7,34 +7,45 @@
     <div id="modal-content-image" *ngIf="!isMatch">
       <img [src]="commonService.getImageSrc()" />
     </div>
-    <div id="modal-content-image-match" *ngIf="isMatch">
-      <div class="match-child">
-        <p>
-          {{matchObj.matchName}}
-        </p>
-        <hr>
-        <p>
-          {{matchObj.description}}
-        </p>
+    <div id="modal-container-match" *ngIf="isMatch">
+      <div id="modal-container-match-text">
+        <div class="match-child">
+          <p>
+            {{matchObj.matchName}}
+          </p>
+          <hr>
+          <p>
+            {{matchObj.description}}
+          </p>
+        </div>
+
+        <div class="match-child">
+          <circle-progress
+            [percent]="getSimilarity()"
+            [radius]="100"
+            [outerStrokeWidth]="8"
+            [innerStrokeWidth]="4"
+            [outerStrokeColor]="'#78C000'"
+            [innerStrokeColor]="'#C7E596'"
+            [animation]="true"
+            [animationDuration]="300"
+          ></circle-progress>
+        </div>
+      </div>
+      <div id="modal-container-match-image">
+        <div class="frame-square">
+          <div class="crop">
+            <img [src]="commonService.getImageSrc()" />
+          </div>
+        </div>
+        <div class="frame-square">
+          <div class="crop">
+            <img [src]="matchObj.matchSrc" />
+          </div>
+        </div>
       </div>
 
 
-      <!--<p>{{matchObj.similarityScore*100}}%</p>-->
-
-      <img class="match-child" [src]="commonService.getImageSrc()" />
-      <img class="match-child" [src]="matchObj.matchSrc" />
-      <div class="match-child">
-        <circle-progress
-          [percent]="getSimilarity()"
-          [radius]="100"
-          [outerStrokeWidth]="8"
-          [innerStrokeWidth]="4"
-          [outerStrokeColor]="'#78C000'"
-          [innerStrokeColor]="'#C7E596'"
-          [animation]="true"
-          [animationDuration]="300"
-        ></circle-progress>
-      </div>
     </div>
     <hr>
     <div id="modal-content-footer">
