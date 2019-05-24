@@ -3,6 +3,12 @@ body {
   background: #6e6e6e url('./assets/Mirror_modified.svg') fixed no-repeat;
   background-size: cover;
   font-family: 'Open Sans Condensed', sans-serif;
+  position: fixed;
+  min-height: 100%;
+  min-width: 1024px;
+
+  width: 100%;
+  height: auto;
   /*overflow: hidden;*/
 }
 .heighty {

@@ -29,7 +29,7 @@ export class PreviewComponent {
   }
   getSimilarity() {
     // @ts-ignore
-    let x =  parseInt(this.matchObj.similarityScore * 1000);
-    return x > 100 ? x % 100 : x;
+    let x =  parseInt(this.matchObj.similarityScore * 100);
+    return x;
   }
 }
