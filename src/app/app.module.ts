@@ -26,7 +26,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     WebcamModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule,
+    NgbModule.forRoot(),
     HttpClientModule,
     // Specify ng-circle-progress as an import
     NgCircleProgressModule.forRoot({
