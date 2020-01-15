@@ -2,8 +2,9 @@
   "name": "sparks-webapp",
   "version": "0.0.0",
   "scripts": {
+    "heroku-postbuild": "ng build",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,8 +25,10 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
+    "express": "^4.17.1",
     "ng-circle-progress": "^1.4.0",
     "ngx-webcam": "^0.2.2",
+    "path": "^0.12.7",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
@@ -35,10 +38,11 @@
     "@angular/cli": "~7.2.1",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.1.1",
@@ -50,5 +54,9 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
+  },
+  "engines": {
+    "node": "6.11.0",
+    "npm": "3.10.10"
   }
 }
