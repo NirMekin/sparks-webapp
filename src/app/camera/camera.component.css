@@ -1,8 +1,55 @@
 .action {
-  width: 30%;
+  width: 15%;
+  background: transparent;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.cont {
+.action:hover {
+  fill: gray !important;
+}
+
+.img-option {
+  display: flex;
+  justify-content: center;
+}
+
+.back {
+  font-size: 20px;
+  color: #fff;
+}
+
+.camera-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mb-30 {
   margin-bottom: 30px;
 }
+
+.mb-0 {
+  margin-bottom: 0;
+}
+.close-camera {
+  color: #fff;
+}
+button:focus {
+  border: none;
+}
+
+.img-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+  button {
+    padding-bottom: 0;
+    border: none;
+    background: none;
+    outline: none;
+  }
 

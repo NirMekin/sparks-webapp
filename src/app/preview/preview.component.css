@@ -1,13 +1,19 @@
 .frame-square {
   background: #fff;
-  border: 2px solid lightslategrey;
+  border: 2px solid lightgray;
   display: inline-block;
   vertical-align: top;
   padding: 10px;
   width: 250px;
   height: 250px;
-  margin-right: .5em;
+  margin-right: 1em;
   margin-bottom: .3em;
+  border-radius: 10px;
+
+}
+
+.ml-10 {
+  margin-left: 10px;
 }
 
 .frame-round .crop {border-radius: 50%;}
@@ -30,8 +36,19 @@
   left: -100%;
 }
 
+.load-result{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+}
 
-
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
 
 #modal-container{
   position: absolute;
@@ -59,10 +76,6 @@
   display: block;
   margin: 0 auto;
 }
-#modal-content-image-match{
-  text-align: center;
-  margin: auto;
-}
 #modal-container-match-text{
   display: flex;
 }
@@ -72,14 +85,15 @@
 }
 
 #modal-container-match-image{
-  width: 50%;
-  margin: auto;
+  margin-right: 50px;
 }
 
 #modal-content-image-match img:last-child{
   clear: both;
 }
 
-#modal-content-footer button{
-  margin: 0.5%;
+#modal-content-footer{
+  display: flex;
+  justify-content: flex-end;
 }
+

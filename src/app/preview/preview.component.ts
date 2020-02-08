@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {Component} from '@angular/core';
 import {CommonService} from '../common.service';
 import {ApiService} from '../api.service';
 
@@ -10,8 +9,10 @@ import {ApiService} from '../api.service';
 })
 export class PreviewComponent {
   isMatch: boolean;
-  matchObj: any;
-  constructor(private modalService: NgbModal, private commonService: CommonService, private apiService: ApiService) {
+  loading = false;
+  matchObj: { matchSrc: string, similarityScore: number, matchName: string };
+
+  constructor(private commonService: CommonService, private apiService: ApiService) {
     this.isMatch = false;
   }
 
@@ -19,17 +20,20 @@ export class PreviewComponent {
     this.commonService.openModal = false;
     this.isMatch = false;
   }
+
   setMatch() {
-   this.apiService.getMatch(this.commonService.getImageSrc()).subscribe(res => {
-     this.commonService.setMatch(res);
-     console.log(res, this.commonService.getMatchObj());
-     this.matchObj = this.commonService.getMatchObj();
-     this.isMatch = true;
-    });
+    this.loading = true;
+    this.apiService.getMatch(this.commonService.getImageSrc())
+      .subscribe(res => {
+        this.commonService.setMatch(res);
+        this.matchObj = this.commonService.getMatchObj();
+        this.isMatch = true;
+        this.loading = false;
+      });
   }
-  getSimilarity() {
-    // @ts-ignore
-    let x =  parseInt(this.matchObj.similarityScore * 100);
-    return x > 100 ? 98 : x;
+
+  get similarity() {
+    const score = this.matchObj.similarityScore * 100;
+    return score > 100 ? 98 : score;
   }
 }

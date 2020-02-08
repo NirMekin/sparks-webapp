@@ -1,6 +1,5 @@
-import { Component, NgModule} from '@angular/core';
+import {Component} from '@angular/core';
 import {CommonService} from '../common.service';
-import {PreviewComponent} from '../preview/preview.component';
 
 @Component({
   selector: 'app-content',
@@ -8,7 +7,7 @@ import {PreviewComponent} from '../preview/preview.component';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
-  isCameraOpen: boolean = false;
+  isCameraOpen = false;
   constructor(public commonService: CommonService) { }
 
   handleFileInput(images) {
@@ -21,7 +20,7 @@ export class ContentComponent {
     reader.readAsDataURL(images[0]);
   }
 
-  updateUploadVisible(event:any) {
+  updateUploadVisible(event) {
     this.isCameraOpen = event;
   }
 

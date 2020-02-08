@@ -1,7 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
 import {CommonService} from '../common.service';
+import {tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-camera',
@@ -9,11 +10,15 @@ import {CommonService} from '../common.service';
   styleUrls: ['./camera.component.css']
 })
 export class CameraComponent implements OnInit {
+
+  @ViewChild('cameraContainer') container: ElementRef;
+
   // toggle webcam on/off
   public showWebcam = false;
   public allowCameraSwitch = true;
   public multipleWebcamsAvailable = false;
   public deviceId: string;
+  loading = false;
   public videoOptions: MediaTrackConstraints = {
     // width: {ideal: 1024},
     // height: {ideal: 576}
@@ -29,25 +34,34 @@ export class CameraComponent implements OnInit {
   private nextWebcam: Subject<boolean | string> = new Subject<boolean | string>();
 
   @Output() isCameraOpen: EventEmitter<any> = new EventEmitter();
+  isMobile: boolean;
 
   constructor(private commonService: CommonService) {
   }
 
   public ngOnInit(): void {
+    this.isMobile = this.commonService.isMobile();
+
     WebcamUtil.getAvailableVideoInputs()
       .then((mediaDevices: MediaDeviceInfo[]) => {
         this.multipleWebcamsAvailable = mediaDevices && mediaDevices.length > 1;
       });
   }
 
+  get isLoading() {
+    return this.loading
+  }
+
   public triggerSnapshot(): void {
     this.trigger.next();
     this.isCameraOpen.emit(false);
+    this.loading = false;
 
   }
 
   public toggleWebcam(): void {
     this.showWebcam = !this.showWebcam;
+    this.loading = this.showWebcam;
     this.isCameraOpen.emit(this.showWebcam);
   }
 
@@ -73,14 +87,23 @@ export class CameraComponent implements OnInit {
   public cameraWasSwitched(deviceId: string): void {
     console.log('active device: ' + deviceId);
     this.deviceId = deviceId;
+    this.loading = false;
   }
 
   public get triggerObservable(): Observable<void> {
-    return this.trigger.asObservable();
+    return this.trigger.asObservable().pipe(
+      tap(() => {
+        this.loading = false;
+      })
+    );
   }
 
   public get nextWebcamObservable(): Observable<boolean | string> {
-    return this.nextWebcam.asObservable();
+    return this.nextWebcam.asObservable().pipe(
+      tap(() => {
+        this.loading = false;
+      })
+    );
   }
 
 }
