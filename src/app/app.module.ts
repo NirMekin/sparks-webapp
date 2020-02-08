@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
+import { TooltipModule } from 'ng2-tooltip-directive';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ContentComponent} from './content/content.component';
@@ -26,6 +27,7 @@ import {NgCircleProgressModule} from 'ng-circle-progress';
     WebcamModule,
     AppRoutingModule,
     FormsModule,
+    TooltipModule,
     NgbModule.forRoot(),
     HttpClientModule,
     // Specify ng-circle-progress as an import

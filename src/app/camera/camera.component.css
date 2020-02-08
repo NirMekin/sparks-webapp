@@ -4,7 +4,10 @@
   border: none;
   display: inline-block;
   cursor: pointer;
-  fill: gray;
+  fill: #151515;
+}
+.option:hover {
+  color: red;
 }
 
 .action:hover {

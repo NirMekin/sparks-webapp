@@ -27,6 +27,7 @@
     "core-js": "^2.5.4",
     "express": "^4.17.1",
     "ng-circle-progress": "^1.4.0",
+    "ng2-tooltip-directive": "^2.8.17",
     "ngx-webcam": "^0.2.2",
     "path": "^0.12.7",
     "rxjs": "~6.3.3",

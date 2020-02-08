@@ -68,4 +68,16 @@ export class CommonService {
 
     return msie > 0 || !!userAgent.match(/Trident.*rv\:11\./);
   }
+
+  isTabletDevice() {
+    let check = false;
+    ((a) => {
+      // tslint:disable-next-line
+      if (this.isTablet(a)) {
+        check = true;
+      }
+    })(this.getUserAgent() || navigator.vendor || (<any>window).opera);
+
+    return check;
+  }
 }

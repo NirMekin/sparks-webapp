@@ -13,21 +13,21 @@
       <div class="loader"></div>
     </div>
     <div id="modal-container-match" *ngIf="isMatch && !loading">
-      <div id="modal-container-match-text">
+      <div id="modal-container-match-text" [class.content-center]="isMobile && !isTablet">
         <div class="match-child">
           <p>
             <b>{{matchObj.matchName}}</b>
           </p>
         </div>
       </div>
-      <div class="result-container" [class.direction-col]="isMobile">
-        <div id="modal-container-match-image" [class.match-image-mobile]="isMobile">
-          <div class="frame-square" [class.mobile-frame]="isMobile">
+      <div class="result-container" [class.direction-col]="isMobile && !isTablet">
+        <div id="modal-container-match-image" [class.match-image-mobile]="isMobile && !isTablet">
+          <div class="frame-square" [class.mobile-frame]="isMobile && !isTablet">
             <div class="crop">
               <img [src]="commonService.getImageSrc()" />
             </div>
           </div>
-          <div class="frame-square" [class.mobile-frame]="isMobile">
+          <div class="frame-square" [class.mobile-frame]="isMobile && !isTablet">
             <div class="crop">
               <img [src]="matchObj.matchSrc">
             </div>
@@ -53,8 +53,9 @@
     <hr>
 
     <div id="modal-content-footer">
-      <button type="button" class="btn btn-default ml-10" (click)="closeModal()">Close</button>
-      <button type="button" class="btn btn-primary ml-10" [disabled]="isMatch" (click)="startProcess()">Match</button>
+      <button type="button" class="preview-btn btn btn-default ml-10" (click)="closeModal()">Close</button>
+      <button type="button" class="preview-btn btn btn-secondary ml-10" [disabled]="isMatch || loading"
+              [class.disabled-btn]="isMatch || loading" (click)="startProcess()">Match</button>
     </div>
   </div>
 </div>

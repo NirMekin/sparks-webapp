@@ -12,6 +12,7 @@ export class PreviewComponent implements OnInit {
   loading = false;
   matchObj: { matchSrc: string, similarityScore: number, matchName: string };
   isMobile: any;
+  isTablet: boolean;
 
   constructor(private commonService: CommonService, private apiService: ApiService) {
   }
@@ -19,6 +20,7 @@ export class PreviewComponent implements OnInit {
   ngOnInit(): void {
     this.isMatch = false;
     this.isMobile = this.commonService.isMobile();
+    this.isTablet = this.commonService.isTabletDevice();
   }
 
   closeModal() {

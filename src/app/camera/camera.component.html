@@ -13,26 +13,34 @@
   </webcam>
 </div>
 
-<div [ngClass]="{'mb-30': !showWebcam, 'mb-0': showWebcam}" class="img-option">
-  <button (click)="toggleWebcam()" class="action">
-    <span class="action back width-100" *ngIf="showWebcam; else icon"><b>Back</b></span>
+<div class="img-option mb-30" *ngIf="!showWebcam">
+  <button (click)="toggleWebcam()"
+          tooltip="Open camera" placement="bottom" show-delay="50" hide-delay="50" displayTouchscreen	="false"
+          class="action option">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g> <g> <g> <circle cx="256" cy="277.333" r="106.667"/> <path d="M469.333,106.667h-67.656c-8.552,0-16.583-3.333-22.635-9.375l-39-39c-10.073-10.073-23.469-15.625-37.719-15.625     h-92.646c-14.25,0-27.646,5.552-37.719,15.625l-39,39c-6.052,6.042-14.083,9.375-22.635,9.375H42.667     C19.135,106.667,0,125.802,0,149.333v277.333c0,23.531,19.135,42.667,42.667,42.667h426.667     c23.531,0,42.667-19.135,42.667-42.667V149.333C512,125.802,492.865,106.667,469.333,106.667z M256,405.333     c-70.583,0-128-57.417-128-128s57.417-128,128-128s128,57.417,128,128S326.583,405.333,256,405.333z M426.667,213.333     c-11.76,0-21.333-9.573-21.333-21.333s9.573-21.333,21.333-21.333S448,180.24,448,192S438.427,213.333,426.667,213.333z"/> </g> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
   </button>
 </div>
 
 <div class="img-option">
-  <button class="action btn bg-default btn-round text-light btn-lg btn-rised width-100"
+  <button class="action option fit-content btn bg-default btn-round text-light btn-lg btn-rised mbottom-5"
+          tooltip="Switch camera" placement="bottom" show-delay="50" hide-delay="50" displayTouchscreen	="false"
           (click)="showNextWebcam(true)"
-          *ngIf="showWebcam && isMobile"
-  ><b>Switch Camera</b>
+          *ngIf="showWebcam && isMobile">
+    <span class="option"><b>Switch Camera</b></span>
   </button>
 
-  <button class="action btn bg-default btn-round text-light btn-lg btn-rised width-100"
+  <button class="action option btn bg-default btn-round text-light btn-lg btn-rised fit-content mbottom-5"
+          tooltip="Take a photo" placement="bottom" show-delay="50" hide-delay="50" displayTouchscreen	="false"
           (click)="triggerSnapshot()"
           *ngIf="showWebcam">
-    <b>Take A Snapshot</b>
+    <span class="option"> <b>Take A Photo</b></span>
   </button>
-</div>
 
-<ng-template #icon>
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 420.8 420.8" style="enable-background:new 0 0 420.8 420.8;" xml:space="preserve"> <g> <g> <g> <path d="M406.8,96.4c-8.4-8.8-20-14-33.2-14h-66.4v-0.8c0-10-4-19.6-10.8-26c-6.8-6.8-16-10.8-26-10.8h-120 c-10.4,0-19.6,4-26.4,10.8c-6.8,6.8-10.8,16-10.8,26v0.8h-66c-13.2,0-24.8,5.2-33.2,14c-8.4,8.4-14,20.4-14,33.2v199.2 C0,342,5.2,353.6,14,362c8.4,8.4,20.4,14,33.2,14h326.4c13.2,0,24.8-5.2,33.2-14c8.4-8.4,14-20.4,14-33.2V129.6 C420.8,116.4,415.6,104.8,406.8,96.4z M400,328.8h-0.4c0,7.2-2.8,13.6-7.6,18.4s-11.2,7.6-18.4,7.6H47.2 c-7.2,0-13.6-2.8-18.4-7.6c-4.8-4.8-7.6-11.2-7.6-18.4V129.6c0-7.2,2.8-13.6,7.6-18.4s11.2-7.6,18.4-7.6h77.2 c6,0,10.8-4.8,10.8-10.8V81.2c0-4.4,1.6-8.4,4.4-11.2s6.8-4.4,11.2-4.4h119.6c4.4,0,8.4,1.6,11.2,4.4c2.8,2.8,4.4,6.8,4.4,11.2 v11.6c0,6,4.8,10.8,10.8,10.8H374c7.2,0,13.6,2.8,18.4,7.6s7.6,11.2,7.6,18.4V328.8z"/> <path d="M210.4,130.8c-27.2,0-52,11.2-69.6,28.8c-18,18-28.8,42.4-28.8,69.6s11.2,52,28.8,69.6c18,18,42.4,28.8,69.6,28.8 s52-11.2,69.6-28.8c18-18,28.8-42.4,28.8-69.6s-11.2-52-28.8-69.6C262.4,142,237.6,130.8,210.4,130.8z M264.8,284 c-14,13.6-33.2,22.4-54.4,22.4S170,297.6,156,284c-14-14-22.4-33.2-22.4-54.4c0-21.2,8.8-40.4,22.4-54.4 c14-14,33.2-22.4,54.4-22.4s40.4,8.8,54.4,22.4c14,14,22.4,33.2,22.4,54.4C287.6,250.8,278.8,270,264.8,284z"/> <circle cx="352.8" cy="150" r="19.6"/> </g> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
-</ng-template>
+  <div class="img-option mbottom-5">
+    <button (click)="toggleWebcam()"
+            tooltip="Cancel and go back" placement="bottom" show-delay="50" hide-delay="50" displayTouchscreen	="false"
+            class="action fit-content">
+      <span class="action back option fit-content" *ngIf="showWebcam"><b>Cancel</b></span>
+    </button>
+  </div>
+</div>

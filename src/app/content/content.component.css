@@ -4,7 +4,7 @@
 .upload {
   cursor: pointer;
   display: inline-block;
-  fill: gray;
+  fill: #151515;
 }
 .upload:hover {
   fill: lightgrey !important;
@@ -24,7 +24,6 @@
 
 .mobile-title {
   font-size: 55px;
-  justify-content: normal;
 }
 
 .view-container {

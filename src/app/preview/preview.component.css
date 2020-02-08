@@ -83,6 +83,20 @@
 
 #modal-container-match-text {
   display: flex;
+  font-size: 20px;
+}
+
+.disabled-btn {
+  background: lightgrey;
+  border-color: lightgrey;
+}
+
+.content-center {
+  justify-content: center;
+}
+
+.preview-btn {
+  padding: 5px !important;
 }
 
 #modal-container-match-text .match-child {
