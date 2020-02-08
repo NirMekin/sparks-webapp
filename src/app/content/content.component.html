@@ -1,12 +1,11 @@
-<section class=" heighty pt-2 pb-2 mt-0 align-items-center d-flex">
-
-  <div class="container-fluid">
-    <div class="row  justify-content-center align-items-center d-flex text-center h-100">
-      <div class="col-12 col-md-8  h-50 ">
-        <h1 class="display-2 main-title text-light mb-5 mt-5"><strong>My Holocaust Twin</strong></h1>
+<section>
+  <div class="view-container">
+    <div class="row justify-content-center align-items-center d-flex text-center h-100">
+      <div class="col-12 col-md-8 h-50 ">
+        <h1 class="display-2 main-title" [class.mobile-title]="isMobile"><strong>My Holocaust Twin</strong></h1>
 
         <div class="img-option-container">
-          <div *ngIf="!isCameraOpen" class="img-option">
+          <div *ngIf="!isCameraOpen" class="img-option mb-60">
             <label href="#"
                    class="action upload"
                    for="fileupload">
@@ -21,14 +20,14 @@
           <app-camera (isCameraOpen)="updateUploadVisible($event)"></app-camera>
         </div>
 
-        <div class="lead text-light mb-5 mt-30 sub-title">
+        <div class="text-light mt-30 sub-title">
         <span>
-          Think about it, it could have been You...
+          It could have been you there...
         </span>
         </div>
 
       </div>
     </div>
-    <app-preview *ngIf="commonService.openModal"></app-preview>
+    <app-preview *ngIf="openModal"></app-preview>
   </div>
 </section>

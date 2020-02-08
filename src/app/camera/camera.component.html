@@ -13,20 +13,20 @@
   </webcam>
 </div>
 
-<div [ngClass]="{'mb-30': !showWebcam, 'mb-0': showWebcam}">
+<div [ngClass]="{'mb-30': !showWebcam, 'mb-0': showWebcam}" class="img-option">
   <button (click)="toggleWebcam()" class="action">
-    <span class="action back" *ngIf="showWebcam; else icon"><b>Back</b></span>
+    <span class="action back width-100" *ngIf="showWebcam; else icon"><b>Back</b></span>
   </button>
 </div>
 
 <div class="img-option">
-  <button class="action btn bg-default btn-round text-light btn-lg btn-rised"
+  <button class="action btn bg-default btn-round text-light btn-lg btn-rised width-100"
           (click)="showNextWebcam(true)"
-          *ngIf="showWebcam && !isMobile"
+          *ngIf="showWebcam && isMobile"
   ><b>Switch Camera</b>
   </button>
 
-  <button class="action btn bg-default btn-round text-light btn-lg btn-rised"
+  <button class="action btn bg-default btn-round text-light btn-lg btn-rised width-100"
           (click)="triggerSnapshot()"
           *ngIf="showWebcam">
     <b>Take A Snapshot</b>

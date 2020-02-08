@@ -1,12 +1,35 @@
 .action {
-  width: 15%;
+  width: 20%;
 }
 .upload {
   cursor: pointer;
   display: inline-block;
+  fill: gray;
 }
 .upload:hover {
-  fill: gray !important;
+  fill: lightgrey !important;
+}
+
+.main-title {
+  padding-top: 25px;
+  color: #fff;
+  font-size: 80px;
+  margin-bottom: 60px;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.mobile-title {
+  font-size: 55px;
+  justify-content: normal;
+}
+
+.view-container {
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .inputfile {
@@ -23,9 +46,7 @@
 }
 
 .sub-title {
-  font-size: 30px;
-  position: fixed;
-  bottom: 0;
+  font-size: 25px;
 }
 
 button:focus {

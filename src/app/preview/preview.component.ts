@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonService} from '../common.service';
 import {ApiService} from '../api.service';
 
@@ -7,13 +7,18 @@ import {ApiService} from '../api.service';
   templateUrl: './preview.component.html',
   styleUrls: ['./preview.component.css']
 })
-export class PreviewComponent {
+export class PreviewComponent implements OnInit {
   isMatch: boolean;
   loading = false;
   matchObj: { matchSrc: string, similarityScore: number, matchName: string };
+  isMobile: any;
 
   constructor(private commonService: CommonService, private apiService: ApiService) {
+  }
+
+  ngOnInit(): void {
     this.isMatch = false;
+    this.isMobile = this.commonService.isMobile();
   }
 
   closeModal() {
@@ -21,7 +26,7 @@ export class PreviewComponent {
     this.isMatch = false;
   }
 
-  setMatch() {
+  startProcess() {
     this.loading = true;
     this.apiService.getMatch(this.commonService.getImageSrc())
       .subscribe(res => {

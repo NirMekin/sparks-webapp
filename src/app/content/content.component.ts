@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonService} from '../common.service';
 
 @Component({
@@ -6,9 +6,18 @@ import {CommonService} from '../common.service';
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent {
+export class ContentComponent implements OnInit{
   isCameraOpen = false;
-  constructor(public commonService: CommonService) { }
+  isMobile: boolean;
+  constructor(private commonService: CommonService) { }
+
+  ngOnInit(): void {
+    this.isMobile = this.commonService.isMobile();
+  }
+
+  get openModal() {
+    return this.commonService.openModal;
+  }
 
   handleFileInput(images) {
     const reader = new FileReader();

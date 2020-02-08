@@ -1,8 +1,9 @@
-<div id="modal-container">
+<div id="modal-container" [class.mobile-modal]="isMobile">
   <div id="modal-container-content">
     <div id="modal-content-header">
-        <h3 *ngIf="!loading">Find your twin</h3>
+        <h3 *ngIf="!isMatch && !loading">Find Your Twin</h3>
         <h3 *ngIf="loading"> Processing...</h3>
+        <h3 *ngIf="isMatch"> Completed</h3>
     </div>
     <hr>
     <div id="modal-content-image" *ngIf="!isMatch && !loading">
@@ -19,14 +20,14 @@
           </p>
         </div>
       </div>
-      <div class="result-container">
-        <div id="modal-container-match-image">
-          <div class="frame-square">
+      <div class="result-container" [class.direction-col]="isMobile">
+        <div id="modal-container-match-image" [class.match-image-mobile]="isMobile">
+          <div class="frame-square" [class.mobile-frame]="isMobile">
             <div class="crop">
               <img [src]="commonService.getImageSrc()" />
             </div>
           </div>
-          <div class="frame-square">
+          <div class="frame-square" [class.mobile-frame]="isMobile">
             <div class="crop">
               <img [src]="matchObj.matchSrc">
             </div>
@@ -53,7 +54,7 @@
 
     <div id="modal-content-footer">
       <button type="button" class="btn btn-default ml-10" (click)="closeModal()">Close</button>
-      <button type="button" class="btn btn-primary ml-10" (click)="setMatch()">Match</button>
+      <button type="button" class="btn btn-primary ml-10" [disabled]="isMatch" (click)="startProcess()">Match</button>
     </div>
   </div>
 </div>
