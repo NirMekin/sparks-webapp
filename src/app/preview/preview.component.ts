@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {CommonService} from '../common.service';
 import {ApiService} from '../api.service';
 
@@ -10,9 +10,11 @@ import {ApiService} from '../api.service';
 export class PreviewComponent implements OnInit {
   isMatch: boolean;
   loading = false;
-  matchObj: { matchSrc: string, similarityScore: number, matchName: string };
+  matchObj: { matchSrc: string, similarityScore: number, matchName: string, nameSearch: string };
   isMobile: any;
   isTablet: boolean;
+  noMatch: boolean
+  @Output() error = new EventEmitter();
 
   constructor(private commonService: CommonService, private apiService: ApiService) {
   }
@@ -36,7 +38,14 @@ export class PreviewComponent implements OnInit {
         this.matchObj = this.commonService.getMatchObj();
         this.isMatch = true;
         this.loading = false;
-      });
+
+        if (this.matchObj.matchName === 'No Match Found') {
+          this.noMatch = true;
+        }
+      },
+        err => {
+        this.error.emit();
+        });
   }
 
   get similarity() {

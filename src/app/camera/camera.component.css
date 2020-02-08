@@ -6,6 +6,7 @@
   cursor: pointer;
   fill: #151515;
 }
+
 .option:hover {
   color: red;
 }

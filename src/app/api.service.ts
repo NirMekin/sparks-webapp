@@ -1,22 +1,29 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http/';
-import {map} from 'rxjs/operators';
+import {catchError, map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+
+export const HEROKU_APP = 'https://holocaustwin.herokuapp.com/getSimilarVictim'; //POST
+export const GOOGLE_APP = 'https://myholocausttwin.ew.r.appspot.com/getSimilarVictim'; //POST
+export const GOOGLE_APP_HEALTH_CHECK = 'https://myholocausttwin.ew.r.appspot.com/healthCheck'; //GET
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
   constructor(private http: HttpClient) {
   }
 
   getMatch(imageSrc: any): Observable<any> {
-    console.log(imageSrc);
-    return this.http.post(`https://holocaustwin.herokuapp.com/getSimilarVictim`, {path: imageSrc})
+    return this.http.post(GOOGLE_APP, {path: imageSrc})
       .pipe(
         map((res) => {
           return (res);
-        })
-      );
+        }));
+  }
+
+  healthCheck() {
+    return this.http.get(GOOGLE_APP_HEALTH_CHECK);
   }
 }

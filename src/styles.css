@@ -1,13 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background: #6e6e6e url('./assets/Mirror_modified.svg') fixed no-repeat;
-  background-size: cover;
+  background: #6e6e6e url('./assets/Mirror_modified.svg') no-repeat;
+  background-size: cover !important;
   font-family: 'Open Sans Condensed', sans-serif;
-  position: fixed;
-  min-height: 100%;
-
+  height: 100%;
   width: 100%;
-  height: auto;
 }
 .heighty {
   height: 100% !important;
@@ -64,4 +61,14 @@ button {
   margin-bottom: 5px;
 }
 
-/*///////////////////*/
+.height-100 {
+  height: 100%;
+}
+.action-mobile {
+  fill: lightgrey !important;
+  width: 35% !important;
+}
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
