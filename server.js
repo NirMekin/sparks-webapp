@@ -7,10 +7,6 @@ const app = express();
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/sparks-webapp'));
 
-app.get('/my-twin-favicon.ico', function(req,res) {
-  res.sendFile(path.join('https://github.com/NirMekin/sparks-webapp/blob/master/src/my-twin-favicon.ico'));
-});
-
 app.get('/*', function(req,res) {
 
   res.sendFile(path.join(__dirname+'/dist/sparks-webapp/index.html'));
