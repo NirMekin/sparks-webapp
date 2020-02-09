@@ -43,13 +43,13 @@ export class PreviewComponent implements OnInit {
           this.noMatch = true;
         }
       },
-        err => {
+        (err) => {
         this.error.emit();
         });
   }
 
   get similarity() {
     const score = this.matchObj.similarityScore * 100;
-    return score > 100 ? 98 : score;
+    return score > 95 ? 95 : score;
   }
 }
