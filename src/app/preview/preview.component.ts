@@ -43,7 +43,7 @@ export class PreviewComponent implements OnInit {
           this.noMatch = true;
         }
       },
-        err => {
+        (err) => {
         this.error.emit();
         });
   }
