@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static(__dirname + '/dist/sparks-webapp'));
 
 app.get('/my-twin-favicon.ico', function(req,res) {
-  res.sendFile(path.join(__dirname+'/dist/sparks-webapp/my-twin-favicon.ico'));
+  res.sendFile(path.join('https://github.com/NirMekin/sparks-webapp/blob/master/src/my-twin-favicon.ico'));
 });
 
 app.get('/*', function(req,res) {
