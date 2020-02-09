@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
           this.loading = false;
         },
         err => {
+          this.loading = false;
           this.error = true;
         });
   }
