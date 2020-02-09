@@ -50,6 +50,6 @@ export class PreviewComponent implements OnInit {
 
   get similarity() {
     const score = this.matchObj.similarityScore * 100;
-    return score > 100 ? 98 : score;
+    return score > 95 ? 95 : score;
   }
 }
