@@ -12,6 +12,7 @@ export class ContentComponent implements OnInit {
   isMobile: boolean;
   year: any;
   error = false;
+  loading = true;
 
   constructor(private commonService: CommonService, private apiService: ApiService) {
   }
@@ -22,6 +23,7 @@ export class ContentComponent implements OnInit {
     this.apiService.healthCheck()
       .subscribe(() => {
           console.log('APP IS UP AND READY');
+          this.loading = false;
         },
         err => {
           this.error = true;
