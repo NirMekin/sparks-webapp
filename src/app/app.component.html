@@ -2,7 +2,7 @@
   <div class="view-container height-100">
     <div class="row justify-content-center d-flex text-center h-100 width-100 margin-0">
       <div class="col-12 col-md-8">
-        <h1 class="display-2 main-title" [class.mobile-title]="isMobile"><strong>My Holocaust <span style="color:red;">Twin</span></strong></h1>
+        <h1 class="display-2 main-title" [class.mobile-title]="isMobile"><strong>My Holocaust <span style="color:red; transform: rotate(25deg); display: inline-block;">Twin</span></strong></h1>
 
         <div [class.main-content]="isMobile" *ngIf="!hasError; else errorMessage">
           <div class="img-option-container">
@@ -31,6 +31,12 @@
       </div>
     </div>
     <app-preview *ngIf="openModal && !hasError" (error)="onError()"></app-preview>
+    <div class="created-by">
+      <div><a target="_new" href="//www.linkedin.com/in/naor-haimov-045008a9/">Naor</a></div>
+      <div><a target="_new" href="//www.yoavalroy.me/">Yoav</a></div>
+      <div><a target="_new" href="//www.linkedin.com/in/nir-mekin-6b20bb117/">Nir</a></div>
+      <div><a target="_new" href="//twitter.com/ChenMorSays">Hen</a></div>
+    </div>
   </div>
 </section>
 
