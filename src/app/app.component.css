@@ -92,40 +92,16 @@ button:focus {
 
 .created-by {
   position: fixed;
-  bottom: 10px;
-  left: 15px;
+  bottom: 5px;
+  left: 10px;
   display: flex;
-  justify-content: space-between;
-  width: 150px; 
-  font-size: 20px;
+  color: white;
+  justify-content: space-between; 
+  width: 350px; 
+  font-size: 16px;
 }
 
 .created-by a {
   color: white;
   text-decoration: none;
-}
-
-.created-by>div {
-  transition: transform 0.5s ease-in;
-}
-
-.created-by>div:hover {
-  transform: rotate(45deg) !important;
-  cursor: pointer;
-}
-
-.created-by>div:first-child {
-  transform: rotate(-15deg);
-}
-
-.created-by>div:nth-child(2){
-  transform: rotate(-35deg);
-}
-
-.created-by>div:nth-child(3) {
-  transform: rotate(20deg);
-}
-
-.created-by>div:last-child {
-  transform: rotate(-7deg);
 }
