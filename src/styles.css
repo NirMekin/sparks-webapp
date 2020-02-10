@@ -61,6 +61,10 @@ button {
   margin-bottom: 5px;
 }
 
+.margin-0 {
+  margin: 0 !important;
+}
+
 .height-100 {
   height: 100%;
 }
