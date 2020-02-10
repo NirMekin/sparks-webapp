@@ -94,7 +94,6 @@ button:focus {
   position: fixed;
   bottom: 10px;
   left: 15px;
-  color: white;
   display: flex;
   justify-content: space-between;
   width: 150px; 
