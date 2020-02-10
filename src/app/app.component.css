@@ -1,3 +1,50 @@
+.credits {
+  font-family: "Proxima Nova","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.credits-pos-1 {
+  right: 0em
+}
+
+.credits-pos-2 {
+  right: 84px
+}
+
+.credits-pos-3 {
+  right: 165px
+}
+
+.credits-pos-4 {
+  right: 231px
+}
+
+.credits div {
+  /*right: 0;*/
+  bottom: 0;
+  position: fixed;
+  padding: 0.5em;
+  font-weight: 600;
+  z-index: 40;
+  vertical-align: middle;
+  background-color: #fc4946;
+  color: #42b4ff;
+  background-color: #fff;
+  color: #fc4946;
+}
+
+.credits div:hover {
+  background-color: #fc4946;
+  color: #fff;
+}
+
+.credits div img {
+    border-radius: 2em;
+    width: 1.5em;
+    vertical-align: middle;
+}
+
 .action {
   width: 20%;
 }
