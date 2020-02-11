@@ -14,13 +14,8 @@
 .main-title {
   padding-top: 25px;
   color: #fff;
-  font-size: 80px;
-  margin-bottom: 60px;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  margin-left: 10px;
-  margin-right: 10px;
+  font-size: 75px;
+  margin-bottom: 30px;
 }
 
 .main-loader {
