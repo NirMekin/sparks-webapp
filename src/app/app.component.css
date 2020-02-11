@@ -97,7 +97,8 @@ button:focus {
   display: flex;
   color: white;
   justify-content: space-between; 
-  width: 350px; 
+  width: 350px;
+  max-width: 95%; 
   font-size: 16px;
 }
 
