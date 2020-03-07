@@ -90,18 +90,23 @@ button:focus {
   -webkit-filter: brightness(0.25);
 }
 
-.appeared-in-wrapper {
-  position: fixed;
-  bottom: 10%;
-  width: 250px;
-  margin-left:-125px;
-  max-width: 95%; 
-  left:50%;
+@media only screen and (min-device-width: 480px) {
+  .appeared-in-wrapper {
+    display: none;
+  }
+  .appeared-in {
+    display: none;
+  }
 }
 
-.appeared-in-wrapper h4 {
-  text-align: center;
-  color: rgba(255,255,255,0.75);
+.appeared-in-wrapper {
+  display: block;
+  position: fixed;
+  bottom: 3%;
+  width: 150px;
+  margin-left:-75px;
+  max-width: 95%; 
+  right:5%;
 }
 
 .appeared-in {
@@ -120,8 +125,8 @@ button:focus {
 }
 
 .appeared-in a img {
-  height: 5.5rem;
-  width: 5.5rem;
+  height: 4rem;
+  width: 4rem;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
