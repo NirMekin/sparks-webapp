@@ -4,6 +4,7 @@ import {catchError, map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
 export const HEROKU_APP = 'https://holocaustwin.herokuapp.com/getSimilarVictim'; //POST
+export const HEROKU_APP_HEALTH_CHECK = 'https://holocaustwin.herokuapp.com/healthCheck'; //GET
 export const GOOGLE_APP = 'https://myholocausttwin.ew.r.appspot.com/getSimilarVictim'; //POST
 export const GOOGLE_APP_HEALTH_CHECK = 'https://myholocausttwin.ew.r.appspot.com/healthCheck'; //GET
 
@@ -16,7 +17,7 @@ export class ApiService {
   }
 
   getMatch(imageSrc: any): Observable<any> {
-    return this.http.post(GOOGLE_APP, {path: imageSrc})
+    return this.http.post(HEROKU_APP, {path: imageSrc})
       .pipe(
         map((res) => {
           return (res);
@@ -24,6 +25,6 @@ export class ApiService {
   }
 
   healthCheck() {
-    return this.http.get(GOOGLE_APP_HEALTH_CHECK);
+    return this.http.get(HEROKU_APP_HEALTH_CHECK);
   }
 }
