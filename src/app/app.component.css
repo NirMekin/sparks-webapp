@@ -90,15 +90,6 @@ button:focus {
   -webkit-filter: brightness(0.25);
 }
 
-@media only screen and (min-device-width: 480px) {
-  .appeared-in-wrapper {
-    display: none;
-  }
-  .appeared-in {
-    display: none;
-  }
-}
-
 .appeared-in-wrapper {
   display: block;
   position: fixed;
