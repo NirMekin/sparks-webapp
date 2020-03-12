@@ -16,6 +16,7 @@
   color: #fff;
   font-size: 75px;
   margin-bottom: 30px;
+  text-shadow: 2px 2px rgba(0,0,0,0.1);
 }
 
 .main-loader {
@@ -83,6 +84,47 @@ button:focus {
 
 .rights {
   font-size: 14px;
+}
+
+.brightness-low {
+  -webkit-filter: brightness(0.25);
+}
+
+.appeared-in-wrapper {
+  display: block;
+  position: fixed;
+  bottom: 3%;
+  width: 150px;
+  margin-left:-75px;
+  max-width: 95%; 
+  right:5%;
+}
+
+.appeared-in {
+  display: flex;
+  justify-content: space-between; 
+  font-size: 16px;
+}
+
+.appeared-in a {
+  color: white;
+  text-decoration: none;
+}
+
+.appeared-in a:hover {
+  -webkit-filter: brightness(1.4);
+}
+
+.appeared-in a img {
+  height: 4rem;
+  width: 4rem;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+
+.appeared-in a img:hover {
+  -webkit-filter: brightness(1.4);
 }
 
 .created-by {
